@@ -9,9 +9,6 @@ def home():
         'status': 'running'
     })
 
-# ---------------------------
-# Part 1: Weather API Mock
-# ---------------------------
 
 @app.route('/api/weather/current')
 def current_weather():
