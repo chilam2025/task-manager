@@ -7,11 +7,8 @@ def home():
     return jsonify({
         'message': 'Welcome to the Mock API Suite',
         'status': 'running'
-    })
+    }) 
 
-# ---------------------------
-# Part 1: Weather API Mock
-# ---------------------------
 
 @app.route('/api/weather/current')
 def current_weather():
