@@ -1,300 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        /* Left panel */
-        .sidebar {
-            width: 220px;
-            padding: 20px;
-            background: #333;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .sidebar label {
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-        }
-
-        .sidebar select, .sidebar button {
-            width: 100%;
-            padding: 8px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            border: none;
-            font-size: 14px;
-            cursor: pointer;
-
-        }
-
-        .sidebar button {
-            background: #555;
-            color: white;
-        }
-
-        .sidebar button:hover {
-            background: #777;
-        }
-
-        /* Main content */
-        .main-content {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            margin: 0;
-            text-align: center;
-        }
-
-        .round-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 20px 0;
-            border: 4px solid #ddd;
-        }
-
-        .section {
-            width: 100%;
-            margin-bottom: 30px;
-            padding: 15px 20px;
-            border-left: 5px solid #333;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        body.dark .section {
-            background-color: #2a2a2a;
-            border-left: 5px solid #ddd;
-        }
-
-        .section h2 {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .section p, .section ul, .section ol, .section table, .section form {
-            margin: 0;
-            padding-left: 15px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        body.dark .section p, body.dark .section ul, body.dark .section ol, body.dark .section table, body.dark .section form {
-            color: #ccc;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid #333;
-            padding: 8px;
-            text-align: left;
-        }
-
-        body.dark th, body.dark td {
-            border: 1px solid #ddd;
-        }
-
-        input, textarea, button[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            border-radius: 5px;
-            border: 1px solid #333;
-            font-size: 16px;
-        }
-
-        body.dark input, body.dark textarea {
-            background: #333;
-            color: #ddd;
-            border: 1px solid #ccc;
-        }
-
-        button[type="submit"] {
-            background: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button[type="submit"]:hover {
-            background: #555;
-        }
-
-        body.dark button[type="submit"] {
-            background: #ddd;
-            color: #222;
-        }
-
-        body.dark button[type="submit"]:hover {
-            background: #bbb;
-        }
-
-    </style>
+    <meta charset="UTF-8">
+    <title>Ahlam Said – Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Left Sidebar Controls -->
-    <div class="sidebar">
-        <button id="modeBtn" onclick="toggleDark()">Dark Mode</button>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="brand">⚙ Settings</h2>
 
-        <label for="colorPicker">Background Color</label>
+        <button id="modeBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+
+        <label for="colorPicker">Background</label>
         <select id="colorPicker" onchange="changeColor()">
-            <option value="#C8A2C8">Lilac</option>
-            <option value="#FFC0CB">Pink</option>
-            <option value="#FFFFF0">Ivory</option>
-            <option value="#00FFFF">Cyan</option>
-            <option value="#2F4F4F">Dark Slate Gray</option>
-            <option value="#556B2F">Dark Olive Green</option>
-            <option value="#8B4513">Saddle Brown</option>
-            <option value="#483D8B">Dark Slate Blue</option>
-            <option value="#4B0082">Indigo</option>
+            <option value="#F5F5F7">Default</option>
+            <option value="#E8DFF5">Lilac</option>
+            <option value="#FFE4E1">Rose</option>
+            <option value="#E0FFFF">Ice Blue</option>
+            <option value="#FDF6E3">Cream</option>
         </select>
 
         <label for="fontPicker">Font</label>
         <select id="fontPicker" onchange="changeFont()">
-            <option value="Arial, sans-serif">Arial</option>
+            <option value="Inter, sans-serif">Inter</option>
+            <option value="Poppins, sans-serif">Poppins</option>
+            <option value="Georgia, serif">Georgia</option>
             <option value="'Times New Roman', serif">Times New Roman</option>
-            <option value="'Courier New', monospace">Courier New</option>
-            <option value="'Georgia', serif">Georgia</option>
-            <option value="'Verdana', sans-serif">Verdana</option>
         </select>
-    </div>
+    </aside>
 
     <!-- Main Content -->
-    <div class="main-content">
-        <h1>Ahlam Said</h1>
-        <p id="date" style="font-weight:bold;"></p>
-        <img src="images/myphoto.jpeg" alt="My Photo" class="round-photo">
+    <main class="main">
 
-        <!-- About Me Section -->
-        <div class="section">
+        <header class="profile-header">
+            <h1>Ahlam Said</h1>
+            <p id="date"></p>
+
+            <img src="images/myphoto.jpeg" class="profile-photo" alt="Ahlam">
+        </header>
+
+        <!-- About -->
+        <section class="card">
             <h2>About Me</h2>
             <p>
                 I am a third-year university student studying Data Science and Artificial Intelligence at IITMZ.
-                I enjoy building practical projects, improving my programming skills, and learning how modern
-                technologies such as machine learning, data engineering, and cloud systems work in real-world environments.
+                I enjoy building practical projects, improving my programming skills, and learning modern technologies
+                such as machine learning, cloud systems, and data engineering.
             </p>
-        </div>
+        </section>
 
-        <!-- Interests Section -->
-        <div class="section">
-            <h2>My Interests</h2>
+        <!-- Interests -->
+        <section class="card">
+            <h2>Interests</h2>
             <ul>
-                <li>Games creations</li>
-                <li>Developer</li>
-                <li>Making money</li>
+                <li>Game development</li>
+                <li>Software engineering</li>
+                <li>Business & entrepreneurship</li>
             </ul>
-        </div>
+        </section>
 
-        <!-- Skills Section -->
-        <div class="section">
-            <h2>My Skills</h2>
+        <!-- Skills -->
+        <section class="card">
+            <h2>Skills</h2>
             <table>
-                <tr>
-                    <th>Skill</th>
-                    <th>Level</th>
-                </tr>
-                <tr>
-                    <td>Python</td>
-                    <td>Moderate</td>
-                </tr>
-                <tr>
-                    <td>HTML & CSS</td>
-                    <td>Beginner</td>
-                </tr>
-                <tr>
-                    <td>JavaScript</td>
-                    <td>Beginner</td>
-                </tr>
+                <tr><th>Skill</th><th>Level</th></tr>
+                <tr><td>Python</td><td>Intermediate</td></tr>
+                <tr><td>HTML/CSS</td><td>Beginner</td></tr>
+                <tr><td>JavaScript</td><td>Beginner</td></tr>
             </table>
-        </div>
+        </section>
 
-        <!-- Hobbies Section -->
-        <div class="section">
-            <h2>My Hobbies</h2>
+        <!-- Hobbies -->
+        <section class="card">
+            <h2>Hobbies</h2>
             <ol>
                 <li>Swimming</li>
                 <li>Watching movies</li>
-                <li>Playing games</li>
+                <li>Gaming</li>
             </ol>
-        </div>
+        </section>
 
-        <!-- Contact Section -->
-        <div class="section">
+        <!-- Contact Form -->
+        <section class="card">
             <h2>Contact Me</h2>
-            <form>
-                <input type="text" placeholder="Ahlam Said Salim">
-                <input type="email" placeholder="zda23b026@iitmz.ac.in">
-                <textarea placeholder="Message">Hi! I’m interested in connecting.</textarea>
+            <p>
+              You can also email me directly at:
+               <a href="mailto:zda23b026@iitmz.ac.in" style="color: navy; font-weight: bold;">
+                 zda23b026@iitmz.ac.in
+               </a>
+            </p>
+
+            <form id="contactForm">
+                <input type="email"
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
                 <button type="submit">Send</button>
             </form>
-        </div>
+        </section>
 
-        <!-- Registration Section -->
-        <div class="section">
-            <h2>Register</h2>
-            <form action="/submit" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+        <!-- Click Counter -->
+        <section class="card center">
+            <h2>Click Counter</h2>
+            <button onclick="countClicks()">Click Me</button>
+            <p id="clickCount">Clicks: 0</p>
+        </section>
+    </main>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="bio">Bio:</label>
-                <textarea id="bio" name="bio" rows="4"></textarea>
-
-                <button type="submit">Register</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("date").textContent = "Today is: " + new Date().toDateString();
-
-        function toggleDark() {
-            document.body.classList.toggle("dark");
-            const btn = document.getElementById("modeBtn");
-            btn.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
-        }
-
-        function changeColor() {
-            const selectedColor = document.getElementById('colorPicker').value;
-            document.querySelector('.main-content').style.background = selectedColor;
-        }
-
-        function changeFont() {
-            const selectedFont = document.getElementById('fontPicker').value;
-            document.body.style.fontFamily = selectedFont;
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default font */
+body {
+    font-family: Inter, sans-serif;
+}
+
+
+body {
+    display: flex;
+    background: #F5F5F7;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1F1F1F;
+    color: white;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 3px 0 8px rgba(0,0,0,0.2);
+}
+
+.sidebar h2.brand {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sidebar label {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.sidebar select,
+.sidebar button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.sidebar button {
+    background: #444;
+    color: white;
+}
+
+.sidebar button:hover {
+    background: #666;
+}
+
+/* Main area */
+.main {
+    flex: 1;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-top: 20px;
+    object-fit: cover;
+    border: 5px solid #ddd;
+}
+
+/* Card Sections */
+.card {
+    background: white;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+.card.center {
+    text-align: center;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Forms */
+input, textarea, button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    background: #333;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background: #555;
+}
+
+/* Dark Mode */
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark .card {
+    background: #1E1E1E;
+    box-shadow: none;
+}
+
+body.dark th, body.dark td {
+    border-color: #444;
+}
+
+body.dark .profile-photo {
+    border-color: #444;
+}
